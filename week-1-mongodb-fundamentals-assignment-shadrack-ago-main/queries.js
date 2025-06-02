@@ -40,3 +40,5 @@ db.books.find().sort({ price: -1 })
 db.books.find()
   .skip(5)  // Skips first 5 (page 1)
   .limit(5) // Shows next 5 (page 2)
+
+  
