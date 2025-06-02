@@ -1,0 +1,24 @@
+{
+  "name": "mern-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadrack-ago/MERN-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shadrack-ago/MERN-stack/issues"
+  },
+  "homepage": "https://github.com/shadrack-ago/MERN-stack#readme",
+  "dependencies": {
+    "mongodb": "^6.16.0"
+  }
+}
