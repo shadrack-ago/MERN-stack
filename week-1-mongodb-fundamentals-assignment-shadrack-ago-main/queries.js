@@ -41,4 +41,41 @@ db.books.find()
   .skip(5)  // Skips first 5 (page 1)
   .limit(5) // Shows next 5 (page 2)
 
-  
+// Aggregation Pipeline
+  // 1. Average price by genre
+db.books.aggregate([
+  {
+    $group: {
+      _id: "$genre",
+      avgPrice: { $avg: "$price" }
+    }
+  }
+])
+
+// 2. Author with most books
+db.books.aggregate([
+  {
+    $group: {
+      _id: "$author",
+      bookCount: { $sum: 1 }
+    }
+  },
+  { $sort: { bookCount: -1 } },
+  { $limit: 1 }
+])
+
+// 3. Books by publication decade
+db.books.aggregate([
+  {
+    $group: {
+      _id: {
+        $subtract: [
+          "$published_year",
+          { $mod: ["$published_year", 10] }
+        ]
+      },
+      count: { $sum: 1 }
+    }
+  },
+  { $sort: { _id: 1 } }
+])
