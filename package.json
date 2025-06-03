@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/shadrack-ago/MERN-stack#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "mongodb": "^6.16.0"
   }
 }
