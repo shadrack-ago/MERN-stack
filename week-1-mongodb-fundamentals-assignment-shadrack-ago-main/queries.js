@@ -42,6 +42,7 @@ db.books.find()
   .limit(5) // Shows next 5 (page 2)
 
 // Aggregation Pipeline
+
   // 1. Average price by genre
 db.books.aggregate([
   {
@@ -80,4 +81,14 @@ db.books.aggregate([
   { $sort: { _id: 1 } }
 ])
 
+// Task 5: Indexing
+// 1. Single index on title
+db.books.createIndex({ title: 1 })
 
+// 2. Compound index
+db.books.createIndex({ author: 1, published_year: 1 })
+// 3. Performance comparison
+// Without index
+db.books.find({ title: "1984" }).explain("executionStats")
+// With index
+db.books.find({ title: "1984" }).hint({ title: 1 }).explain("executionStats")
