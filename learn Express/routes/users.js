@@ -11,3 +11,5 @@ router.get('/new',(req,res)=>{
     console.log('Request received');           
     res.render().json({message: 'New User Page'});
 })
+
+module.exports=router;
