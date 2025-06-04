@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of croks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <H2>Here is a list of crooks</H2>
+    <ul>
+        <li>John Doe</li>
+        <li>Jane Smith</li>
+        <li>Bob Johnson</li>
+        <li>Alice Brown</li>
+        <li>Charlie Davis</li>
+     </ul>    
+     <form action="index.html" method="post">
+        <label for="name">Add a new crook:</label>
+        <input type="text" id="name" name="name" placeholder="Enter crook's name">
+        <button type="submit">Add Crook</button>
+     </form>
+
+     <script>
+        // This script is just a placeholder for future functionality
+        // You can add JavaScript here to handle form submissions or other interactions
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const nameInput = document.getElementById('name');
+            const newCrook = nameInput.value.trim();
+            
+                const li = document.createElement('li');
+                li.textContent = newCrook;
+                document.querySelector('ul').appendChild(li);
+                nameInput.value = ''; // Clear the input field
+                if (newCrook === "") {
+                    alert('Please enter a crook\'s name.');
+
+                }
+            
+        });
+     </script>
+</body>
+</html>

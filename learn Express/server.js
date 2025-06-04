@@ -2,14 +2,17 @@ const express=require('express');
 const app=express();
 const port=3000;
 app.set('view engine', 'ejs');
-//creating routes
+
+app.use(express.static('public'));
+
+
 app.get('/',(req,res,)=>{
     console.log('Request received');           
     res.render('index');
 
 })
 
-const usersRouter=require('./routes/users');
+const usersRouter=require('./routes/user');
 app.use('/users', usersRouter);
 
 app.listen(port, () => {
