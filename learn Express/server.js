@@ -1,4 +1,7 @@
 const express=require('express');
+const mongoose=require('mongoose');
+
+app.use(express.json());
 const app=express();
 const port=3000;
 app.set('view engine', 'ejs');
